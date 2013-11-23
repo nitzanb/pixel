@@ -1,10 +1,6 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+require_once 'Database.singleton.php';
 
 class Pixel
 {
@@ -20,10 +16,20 @@ class Pixel
         if (!self::$instance){ 
 		self::$instance = new Pixel(); 
 	} 
-
-	return self::$instance; 
-        
+	return self::$instance;         
     }
+    
+    public static function getPixelById($pid)
+    {
+        $db=Database::obtain();
+        $sql = "SELECT * FROM `pixel` WHERE `pid` = ". $pid ;
+        $row = $db->query_first($sql);
+        if(!empty($row['pid']))
+            return $row;
+        else
+            return false;
+    }
+    
     
     
 }

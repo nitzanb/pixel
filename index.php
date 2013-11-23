@@ -4,14 +4,16 @@ require 'config.php';
 $url = trim($_SERVER['REQUEST_URI'] , '/');
 
 $parms = explode( '/', $url);
-if (!empty($params))
-    list($handler, $item, $action) = $parms;
+if (!empty($parms))
+    list($handler, $action, $item) = array_pad($parms, 3, -1);
+
 
 
 include 'template/header.php';
 
-//include 'template/home.php' ;
-include 'template/pixels.php' ;
+
+
+include 'view/'.$handler.'.php' ;
 
 include 'template/footer.php' ;
 
