@@ -20,3 +20,51 @@ function read($item)
     }
         
 }
+
+
+function create()
+{
+    $params = array(    'lid' => array(),
+                        'player' => array('firstname'=>'%FIRSTNAME%',
+                                                'lastname' => '%LASTNAME%', 
+                                                'pid'=>'%ID%',
+                                                'mail'=> '%EMAIL%', 
+                                                'phone'=>'%PHONE%',
+                                                'campaign'=> '%CAMPAIGNID%',
+                                                'Param'=>'%PARAM%',
+                                                'amount'=>'%DEPOSITAMOUNT%',
+                                                'transaction' => '%TRANSACTIONID%',
+                                            ),
+                        'customer' => array(    'firstname'=>'%FIRSTNAME%',
+                                                'lastname' => '%LASTNAME%', 
+                                                'pid'=>'%ID%',
+                                                'mail'=> '%EMAIL%', 
+                                                'phone'=>'%PHONE%',
+                                                'campaign'=> '%CAMPAIGNID%',
+                                                'Param'=>'%PARAM%'),
+                        'visitor' => array()
+                        
+    );
+    
+    if(isset($_POST) && !empty($_POST)):
+        
+        $pixel = array();
+        foreach ($params as $type=>$params)
+        {
+            $string = "";
+            foreach($params as $key=>$val)
+                {
+                  $string .= "&$key=$val"  ;
+                }
+            $pixel[$type] = "?wlname=".$_POST['inputLabelName'] . $string;
+        }
+        
+        print_r($pixel);
+                
+               
+       
+    endif;
+      
+    include '/../template/addNewPixel.php';
+    
+}

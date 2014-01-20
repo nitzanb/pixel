@@ -38,7 +38,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">New pixel</a></li>
+            <li class="active"><a href="/new">New pixel</a></li>
             <li><a href="#pixels">Pixel log</a></li>
             <li><a href="#contact">How to use</a></li>
             <!--
