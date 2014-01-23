@@ -1,5 +1,5 @@
 <?php
-    
+    die('test');
     require 'config.php';
     
     

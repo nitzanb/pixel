@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Database.singleton.php';
+
 
 class Pixel
 {

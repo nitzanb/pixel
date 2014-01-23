@@ -1,9 +1,14 @@
 <?php
 
 if(function_exists($action))
-    $action($item);
-else   
-    echo 'Oops';
+    {    
+        $action($item);
+        
+    }
+else 
+    {
+        echo 'Oops';
+    }                   
 
 
 function read($item)
