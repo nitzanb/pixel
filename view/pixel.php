@@ -70,6 +70,6 @@ function create()
        
     endif;
       
-    include '/../template/addNewPixel.php';
+    include ABSPATH.'/template/addNewPixel.php';
     
 }

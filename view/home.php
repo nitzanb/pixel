@@ -1,3 +1,3 @@
 <?php
 
-include '/../template/home.php';
+include ABSPATH.'/template/home.php';

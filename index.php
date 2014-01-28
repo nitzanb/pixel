@@ -7,6 +7,7 @@ $parms = explode( '/', $url);
 if (!empty($parms))
     list($handler, $action, $item) = array_pad($parms, 3, -1);
 
+	
 
 
 include 'template/header.php';
